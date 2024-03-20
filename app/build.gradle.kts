@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.softyorch.datastorebasic"
-        minSdk = 16
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
