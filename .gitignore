@@ -89,13 +89,6 @@ lint/tmp/
 /.idea/copyright/DailyElectricCost.xml
 /.idea/deploymentTargetDropDown.xml
 /.idea/inspectionProfiles/Project_Default.xml
-/app/google-services.json
-/app/signing.properties
-/app/prerelease/output-metadata.json
-/app/release/output-metadata.json
-/app/dailyelectriccost-deploy-service.json
-/app/admob.properties
-/app/DailyElectricCost.jks
 
 # Mapping
 /app/mapping.txt
