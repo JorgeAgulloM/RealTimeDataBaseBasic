@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "973100473451",
+    "project_id": "realtimedatabase-c2c4c",
+    "storage_bucket": "realtimedatabase-c2c4c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973100473451:android:fbf4b2384a1fec0132652e",
+        "android_client_info": {
+          "package_name": "com.softyorch.datastorebasic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfI31T-W8LOMtoZBMcM2fnQYEzjdf3Bt4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
