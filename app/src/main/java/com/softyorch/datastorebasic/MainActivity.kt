@@ -30,7 +30,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnId.setOnClickListener {
             firebaseInstance.writeOnFirebase()
         }
-        todoAdapter = TodoAdapter()
+        todoAdapter = TodoAdapter { ref ->
+            firebaseInstance.removeFromDatabase(ref)
+        }
         binding.rvTasks.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = todoAdapter
