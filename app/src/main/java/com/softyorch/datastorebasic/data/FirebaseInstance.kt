@@ -6,7 +6,6 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.softyorch.datastorebasic.Todo
-import kotlin.random.Random
 
 class FirebaseInstance(context: Context) {
 
@@ -17,20 +16,20 @@ class FirebaseInstance(context: Context) {
         FirebaseApp.initializeApp(context)
     }
 
-    fun writeOnFirebase() {
-        val randomValue: String = Random.nextInt(1, 200).toString()
+    fun writeOnFirebase(title: String, description: String) {
         val newItem = myRef.push()
-        newItem.setValue(getGenericTodoTaskItem(randomValue))
+        newItem.setValue(Todo(title, description))
     }
 
     fun setupDatabaseListener(postListener: ValueEventListener) {
         database.reference.addValueEventListener(postListener)
     }
 
-    private fun getGenericTodoTaskItem(randomValue: String) =
-        Todo("Task $randomValue", "This is a cream description", false)
-
     fun removeFromDatabase(ref: String) {
         myRef.child(ref).removeValue()
+    }
+
+    fun updateFromDatabase(ref: String) {
+        myRef.child(ref).child("done").setValue(true)
     }
 }
