@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">DataStoreBasic</string>
     <string name="add_todo">Add Todo</string>
+    <string name="dialog_add_task_title">Add Task</string>
+    <string name="dialog_add_task_title_hint">Title</string>
+    <string name="dialog_add_task_description_hint">Description</string>
+    <string name="dialog_add_task_button">Add Task</string>
 </resources>
