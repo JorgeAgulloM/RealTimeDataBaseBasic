@@ -3,6 +3,8 @@ package com.softyorch.datastorebasic
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -27,9 +29,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUi() {
-        binding.btnId.setOnClickListener {
-            firebaseInstance.writeOnFirebase()
-        }
         todoAdapter = TodoAdapter { ref ->
             firebaseInstance.removeFromDatabase(ref)
         }
@@ -37,6 +36,18 @@ class MainActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(context)
             adapter = todoAdapter
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.my_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.btnAddTask -> { firebaseInstance.writeOnFirebase() }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun setupListeners() {
