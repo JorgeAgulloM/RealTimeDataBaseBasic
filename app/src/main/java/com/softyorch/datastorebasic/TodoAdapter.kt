@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
-class TodoAdapter(private var todoList: List<Pair<String, Todo>> = emptyList()): RecyclerView.Adapter<TodoViewHolder>() {
+class TodoAdapter(
+    private var todoList: List<Pair<String, Todo>> = emptyList(),
+    private val onItemSelected: (String) -> Unit
+) : RecyclerView.Adapter<TodoViewHolder>() {
 
     private val diffCallBack = object : DiffUtil.ItemCallback<Pair<String, Todo>>() {
         override fun areItemsTheSame(oldItem: Pair<String, Todo>, newItem: Pair<String, Todo>): Boolean {
@@ -34,6 +37,6 @@ class TodoAdapter(private var todoList: List<Pair<String, Todo>> = emptyList()):
     override fun getItemCount() = todoList.size
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
-        holder.bind(todoList[position])
+        holder.bind(todoList[position], onItemSelected)
     }
 }
